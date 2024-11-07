@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Dados</title>
+  <!-- Incluindo o Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilo personalizado -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center">Cadastro de Professores, Eventos e Relatórios</h2>
+
+    <!-- Formulário para Cadastro de Professor -->
+    <div class="card mt-4">
+      <div class="card-header bg-primary text-white">
+        <h4>Cadastrar Professor</h4>
+      </div>
+      <div class="card-body">
+        <!-- Feedback de Sucesso ou Erro para Professor -->
+        <div id="feedbackProfessor" style="display: none;" class="alert"></div>
+
+        <form id="formProfessor">
+          <div class="form-group">
+            <label for="nomeProfessor">Nome</label>
+            <input type="text" class="form-control" id="nomeProfessor" required>
+          </div>
+          <div class="form-group">
+            <label for="emailProfessor">Email</label>
+            <input type="email" class="form-control" id="emailProfessor" required>
+          </div>
+          <div class="form-group">
+            <label for="senhaProfessor">Senha</label>
+            <input type="password" class="form-control" id="senhaProfessor" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Cadastrar Professor</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Formulário para Cadastro de Evento -->
+    <div class="card mt-4">
+      <div class="card-header bg-success text-white">
+        <h4>Cadastrar Evento</h4>
+      </div>
+      <div class="card-body">
+        <!-- Feedback de Sucesso ou Erro para Evento -->
+        <div id="feedbackEvento" style="display: none;" class="alert"></div>
+
+        <form id="formEvento">
+          <div class="form-group">
+            <label for="nomeEvento">Nome do Evento</label>
+            <input type="text" class="form-control" id="nomeEvento" required>
+          </div>
+          <div class="form-group">
+            <label for="dataEvento">Data do Evento</label>
+            <input type="date" class="form-control" id="dataEvento" required>
+          </div>
+          <div class="form-group">
+            <label for="descricaoEvento">Descrição</label>
+            <textarea class="form-control" id="descricaoEvento" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="localEvento">Local</label>
+            <input type="text" class="form-control" id="localEvento" required>
+          </div>
+          <div class="form-group">
+            <label for="horarioEvento">Horário</label>
+            <input type="time" class="form-control" id="horarioEvento" required>
+          </div>
+          <button type="submit" class="btn btn-success">Cadastrar Evento</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Formulário para Cadastro de Relatório -->
+    <div class="card mt-4">
+        <div class="card-header bg-info text-white">
+          <h4>Cadastrar Relatório</h4>
+        </div>
+        <div class="card-body">
+          <!-- Feedback de Sucesso ou Erro para Relatório -->
+          <div id="feedbackRelatorio" style="display: none;" class="alert"></div>
+      
+          <form id="formRelatorio">
+            <div class="form-group">
+              <label for="descricaoRelatorio">Descrição</label>
+              <textarea class="form-control" id="descricaoRelatorio" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="tipoRelatorio">Tipo de Relatório</label>
+              <input type="text" class="form-control" id="tipoRelatorio" required>
+            </div>
+            <!-- Removido os campos de Evento e Professor -->
+            <button type="submit" class="btn btn-info">Cadastrar Relatório</button>
+          </form>
+        </div>
+      </div>
+  <!-- Scripts -->
+  <script src="main.js"></script>
+
+  <!-- Incluindo o Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+
