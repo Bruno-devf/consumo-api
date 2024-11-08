@@ -1,0 +1,41 @@
+/* Definindo o layout de fundo vermelho */
+body {
+    background-color: #dc3545;
+    color: white;
+}
+
+h1, h2 {
+    font-family: 'Arial', sans-serif;
+}
+
+form {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+input[type="number"] {
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.btn-danger {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+.alert {
+    margin-top: 15px;
+}
+
+.alert-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}

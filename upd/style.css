@@ -1,0 +1,64 @@
+/* Definindo o layout de fundo vermelho */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1, h3 {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Cartões de formulário */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    border-radius: 8px 8px 0 0;
+}
+
+.card-body {
+    background-color: #ffffff;
+}
+
+/* Estilos de botão */
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    font-size: 1.1rem;
+    padding: 10px;
+}
+
+/* Mensagens de Sucesso e Erro */
+.alert {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.alert-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+/* Formulários */
+input[type="text"], input[type="email"], input[type="date"], input[type="time"], textarea {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+textarea {
+    resize: none;
+}

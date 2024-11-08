@@ -1,0 +1,80 @@
+/* Cor de fundo */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilos para os Cards */
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-header {
+    border-radius: 8px 8px 0 0;
+}
+
+/* Efeito de Hover nos Cards */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+    background-color: #ffffff;
+}
+
+/* Estilo dos Cards de Eventos, Relatórios e Professores */
+.evento-card {
+    background-color: #fff3f3;
+}
+
+.relatorio-card {
+    background-color: #f2f2f7;
+}
+
+.professor-card {
+    background-color: #f2f9f2;
+}
+
+/* Cartões de cabeçalho */
+.card-header {
+    font-weight: bold;
+    background-color: #dc3545;
+}
+
+/* Estilos do botão de editar */
+.btn-editar {
+    background-color: #ffc107;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Cards das Listagens */
+.card-body ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.card-body li {
+    background-color: #f8f9fa;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.card-body li:hover {
+    background-color: #e9ecef;
+}
+
+/* Ajuste no alinhamento do texto e estilo do botão */
+h3 {
+    text-align: center;
+    font-size: 1.25rem;
+}
