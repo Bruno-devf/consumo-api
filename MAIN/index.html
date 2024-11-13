@@ -36,8 +36,6 @@
         <h2 class="text-center mb-4">Bem-vindo ao site de Gestão de Eventos Escolares</h2>
 
         <div class="row">
-            <!-- Card Resumo Geral -->
-
             <!-- Card de Eventos -->
             <div class="col-md-6 mb-4">
                 <div class="card">
@@ -79,50 +77,24 @@
         </div>
     </div>
 
-    <!-- Incluindo o JavaScript para carregar os dados -->
-    <script>
-        // Função para carregar dados de eventos e relatórios
-        document.addEventListener('DOMContentLoaded', function () {
-            carregarDados('http://localhost:3031/mostrarEvent', 'eventosList');
-            carregarDados('http://localhost:3031/mostrarRelatorio', 'relatoriosList');
-            
-            // Exibir o nome do usuário logado na navbar
-            const nomeUsuario = localStorage.getItem('usuarioNome');
-            if (nomeUsuario) {
-                document.querySelector('.navbar-text').textContent = `Bem-vindo, ${nomeUsuario}`;
-            } else {
-                window.location.href = 'login.html'; // Redireciona se não estiver logado
-            }
+    <!-- Mensagem de Cookies -->
+    <div class="cookie-msg" id="cookie-msg">
+        <div class="cookie-txt">
+            <p>Este site usa Cookies e tecnologias afins, que são pequenos arquivos ou pedaços de textos baixados para um aparelho
+                quando um visitante acessa um website ou aplicativo. Ao utilizar nosso site você está de 
+                acordo com a utilização dos cookies para te proporcionar uma melhor experiência.</p>
 
-            // Evento de Logout
-            document.getElementById('logoutBtn').addEventListener('click', function() {
-                localStorage.removeItem('usuarioNome'); // Remove o nome do usuário do localStorage
-                window.location.href = 'login.html'; // Redireciona para a página de login
-            });
-        });
-
-        function carregarDados(url, listId) {
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    const listElement = document.getElementById(listId);
-                    data.forEach(item => {
-                        const listItem = document.createElement('li');
-                        listItem.classList.add('list-group-item');
-                        listItem.textContent = item.nome || item.descricao;
-                        listElement.appendChild(listItem);
-                    });
-                })
-                .catch(error => {
-                    console.error('Erro ao carregar dados:', error);
-                });
-        }
-    </script>
-
+            <div class="cookie-btn">
+                <button onclick="aceito()">Aceito</button>
+            </div>
+        </div>
+    </div>
     <!-- Scripts Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="index.js"></script>
+    <script src="cookie.js"></script>
 </body>
 
 </html>
