@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gestão de Eventos</title>
+
+    <!-- Incluindo Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Gestão de Eventos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <span class="navbar-text mr-3">Bem-vindo </span>
+                </li>
+                <li class="nav-item">
+                    <!-- Alterado para um botão de logout -->
+                    <button class="btn btn-outline-danger" id="logoutBtn">Sair</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Container do Dashboard -->
+    <div class="container mt-4">
+        <h2 class="text-center mb-4">Bem-vindo ao site de Gestão de Eventos Escolares</h2>
+
+        <div class="row">
+            <!-- Card Resumo Geral -->
+
+            <!-- Card de Eventos -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Eventos</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul id="eventosList" class="list-group">
+                            <!-- Eventos serão listados aqui -->
+                        </ul>
+                    </div>
+                    <div class="card-footer text-right">
+                        <a href="../insert/insert.html" class="btn btn-primary">Novo Evento</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card de Relatórios -->
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Relatórios</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul id="relatoriosList" class="list-group">
+                            <!-- Relatórios serão listados aqui -->
+                        </ul>
+                    </div>
+                    <div class="card-footer text-right">
+                        <a href="../insert/insert.html" class="btn btn-info">Novo Relatório</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Botão "Visão Geral" -->
+        <div class="text-center mt-4">
+            <a href="../show/show.html" class="btn btn-success">Visão Geral</a>
+        </div>
+    </div>
+
+    <!-- Incluindo o JavaScript para carregar os dados -->
+    <script>
+        // Função para carregar dados de eventos e relatórios
+        document.addEventListener('DOMContentLoaded', function () {
+            carregarDados('http://localhost:3031/mostrarEvent', 'eventosList');
+            carregarDados('http://localhost:3031/mostrarRelatorio', 'relatoriosList');
+            
+            // Exibir o nome do usuário logado na navbar
+            const nomeUsuario = localStorage.getItem('usuarioNome');
+            if (nomeUsuario) {
+                document.querySelector('.navbar-text').textContent = `Bem-vindo, ${nomeUsuario}`;
+            } else {
+                window.location.href = 'login.html'; // Redireciona se não estiver logado
+            }
+
+            // Evento de Logout
+            document.getElementById('logoutBtn').addEventListener('click', function() {
+                localStorage.removeItem('usuarioNome'); // Remove o nome do usuário do localStorage
+                window.location.href = 'login.html'; // Redireciona para a página de login
+            });
+        });
+
+        function carregarDados(url, listId) {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const listElement = document.getElementById(listId);
+                    data.forEach(item => {
+                        const listItem = document.createElement('li');
+                        listItem.classList.add('list-group-item');
+                        listItem.textContent = item.nome || item.descricao;
+                        listElement.appendChild(listItem);
+                    });
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar dados:', error);
+                });
+        }
+    </script>
+
+    <!-- Scripts Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

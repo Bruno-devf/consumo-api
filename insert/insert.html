@@ -13,38 +13,16 @@
 
 <body>
   <div class="container mt-5">
-    <h2 class="text-center">Cadastro de Professores, Eventos e Relatórios</h2>
+    <h2 class="text-center">Cadastro de Eventos e Relatórios</h2>
 
-    <!-- Formulário para Cadastro de Professor -->
-    <div class="card mt-4">
-      <div class="card-header bg-primary text-white">
-        <h4>Cadastrar Professor</h4>
-      </div>
-      <div class="card-body">
-        <!-- Feedback de Sucesso ou Erro para Professor -->
-        <div id="feedbackProfessor" style="display: none;" class="alert"></div>
-
-        <form id="formProfessor">
-          <div class="form-group">
-            <label for="nomeProfessor">Nome</label>
-            <input type="text" class="form-control" id="nomeProfessor" required>
-          </div>
-          <div class="form-group">
-            <label for="emailProfessor">Email</label>
-            <input type="email" class="form-control" id="emailProfessor" required>
-          </div>
-          <div class="form-group">
-            <label for="senhaProfessor">Senha</label>
-            <input type="password" class="form-control" id="senhaProfessor" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Cadastrar Professor</button>
-        </form>
-      </div>
+    <!-- Botão de Voltar -->
+    <div class="text-right mb-4">
+      <a href="../MAIN/index.html" class="btn btn-secondary">Voltar</a>
     </div>
 
     <!-- Formulário para Cadastro de Evento -->
     <div class="card mt-4">
-      <div class="card-header bg-success text-white">
+      <div class="card-header" style="background-color: #9b4d96; color: white;">
         <h4>Cadastrar Evento</h4>
       </div>
       <div class="card-body">
@@ -79,27 +57,28 @@
 
     <!-- Formulário para Cadastro de Relatório -->
     <div class="card mt-4">
-        <div class="card-header bg-info text-white">
-          <h4>Cadastrar Relatório</h4>
-        </div>
-        <div class="card-body">
-          <!-- Feedback de Sucesso ou Erro para Relatório -->
-          <div id="feedbackRelatorio" style="display: none;" class="alert"></div>
-      
-          <form id="formRelatorio">
-            <div class="form-group">
-              <label for="descricaoRelatorio">Descrição</label>
-              <textarea class="form-control" id="descricaoRelatorio" required></textarea>
-            </div>
-            <div class="form-group">
-              <label for="tipoRelatorio">Tipo de Relatório</label>
-              <input type="text" class="form-control" id="tipoRelatorio" required>
-            </div>
-            <!-- Removido os campos de Evento e Professor -->
-            <button type="submit" class="btn btn-info">Cadastrar Relatório</button>
-          </form>
-        </div>
+      <div class="card-header" style="background-color: #9b4d96; color: white;">
+        <h4>Cadastrar Relatório</h4>
       </div>
+      <div class="card-body">
+        <!-- Feedback de Sucesso ou Erro para Relatório -->
+        <div id="feedbackRelatorio" style="display: none;" class="alert"></div>
+      
+        <form id="formRelatorio">
+          <div class="form-group">
+            <label for="descricaoRelatorio">Descrição</label>
+            <textarea class="form-control" id="descricaoRelatorio" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="tipoRelatorio">Tipo de Relatório</label>
+            <input type="text" class="form-control" id="tipoRelatorio" required>
+          </div>
+          <button type="submit" class="btn btn-info">Cadastrar Relatório</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
   <!-- Scripts -->
   <script src="main.js"></script>
 
@@ -108,4 +87,3 @@
 </body>
 
 </html>
-

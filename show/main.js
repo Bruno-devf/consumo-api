@@ -7,11 +7,20 @@ document.addEventListener('DOMContentLoaded', function() {
     const exibirDados = (element, dados, tipo) => {
         dados.forEach(item => {
             const cardItem = document.createElement('li');
-            cardItem.innerHTML = `
-                <strong>${tipo === 'evento' ? item.nome : tipo === 'relatorio' ? item.descricao : item.nome}</strong><br>
-                ${tipo === 'evento' ? `Data: ${item.data} | Local: ${item.local}` : tipo === 'relatorio' ? `Tipo: ${item.tipo}` : `E-mail: ${item.email}`}
-                <br><a href="../upd/index.html?id=${item.id}" class="btn btn-editar btn-sm mt-2">Editar</a>
-            `;
+            cardItem.classList.add('mb-3', 'border-bottom');
+            
+            let itemContent = `<strong>${tipo === 'evento' ? item.nome : tipo === 'relatorio' ? item.descricao : item.nome}</strong><br>
+                               ${tipo === 'evento' ? `Data: ${item.data} | Local: ${item.local}` : 
+                                tipo === 'relatorio' ? `Tipo: ${item.tipo}` : `E-mail: ${item.email}`}<br>`;
+
+            if (tipo !== 'professor') {
+                itemContent += `
+                    <a href="../upd/edit.html?id=${item.id}" class="btn btn-warning btn-sm mt-2">Editar</a>
+                    <a href="../delete/delete.html?id=${item.id}" class="btn btn-danger btn-sm mt-2 ms-2">Excluir</a>
+                `;
+            }
+
+            cardItem.innerHTML = itemContent;
             element.appendChild(cardItem);
         });
     };

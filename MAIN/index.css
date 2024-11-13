@@ -1,0 +1,62 @@
+body {
+    background-color: #f4f6f9;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+    box-shadow: 1px 1px 5px #ccc;
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+.card-header {
+    background-color: #9b4d96;
+    color: white;
+    font-weight: bold;
+}
+
+.card-footer {
+    background-color: #f1f3f5;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar-nav .nav-item .btn-outline-danger {
+    color: #9b4d96;
+    border-color: #9b4d96;
+}
+
+.navbar-nav .nav-item .btn-outline-danger:hover {
+    background-color: #9b4d96;
+    color: white;
+}
+
+h2 {
+    color: #9b4d96;
+    font-weight: bold;
+    text-align: center;
+}
+
+#eventosList, #relatoriosList {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#eventosList li, #relatoriosList li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+#eventosList li:hover, #relatoriosList li:hover {
+    background-color: #f8f9fa;
+    cursor: pointer;
+}
