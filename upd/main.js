@@ -25,7 +25,17 @@ document.addEventListener('DOMContentLoaded', function() {
         msgContainer.innerHTML = '';
 
         try {
-            const response = await fetch(`http://localhost:3031/editarEvent/${id}/${nome}/${data}/${descricao}/${local}/${horario}`);
+            const response = await fetch(`http://localhost:3031/editarEvent/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nome,
+                    data,
+                    descricao,
+                    local,
+                    horario
+                })
+            });
             const result = await response.json();
 
             if (response.ok) {
@@ -48,7 +58,14 @@ document.addEventListener('DOMContentLoaded', function() {
         msgContainer.innerHTML = '';
 
         try {
-            const response = await fetch(`http://localhost:3031/editarRela/${id}/${descricao}/${tipo}`);
+            const response = await fetch(`http://localhost:3031/editarRela/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    descricao,
+                    tipo
+                })
+            });
             const result = await response.json();
 
             if (response.ok) {
@@ -72,7 +89,15 @@ document.addEventListener('DOMContentLoaded', function() {
         msgContainer.innerHTML = '';
 
         try {
-            const response = await fetch(`http://localhost:3031/editarProf/${id}/${nome}/${email}/${senha}`);
+            const response = await fetch(`http://localhost:3031/editarProf/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    nome,
+                    email,
+                    senha
+                })
+            });
             const result = await response.json();
 
             if (response.ok) {

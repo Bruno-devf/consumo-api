@@ -1,5 +1,5 @@
 body {
-    background-color: #dfdddd;
+    background-color: #ccc;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -100,3 +100,37 @@ h2 {
 .cookie-msg .cookie-btn button:hover{
     transform: scale(0.9)
 }
+/* Centralizando o botão "Visão Geral" na parte inferior */
+.text-center.mt-4 {
+    position: RELATIVE;
+    bottom: 20px; /* Distância da borda inferior */
+    left: 50%;
+    transform: translateX(-50%); /* Centralizando horizontalmente */
+    z-index: 10; /* Garantir que o botão fique acima de outros elementos */
+}
+
+/* Estilo do botão */
+.btn-success {
+    background-color: #9b4d96;
+    border-color: #9b4d96;
+    color: white;
+    font-weight: bold;
+    padding: 10px 30px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* Efeito de hover no botão */
+.btn-success:hover {
+    background-color: #7a2e7a;
+    border-color: #7a2e7a;
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+/* Adicionando um efeito de sombra no botão */
+.btn-success:focus, .btn-success:active {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
