@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Dados</title>
+  <!-- Incluindo o Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Estilo personalizado -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h2 class="text-center">Cadastro de Eventos e Relatórios</h2>
+
+    <!-- Botão de Voltar -->
+    <div class="text-right mb-4">
+      <a href="../MAIN/index.html" class="btn btn-secondary">Voltar</a>
+    </div>
+
+    <!-- Formulário para Cadastro de Relatório -->
+    <div class="card mt-4">
+      <div class="card-header" style="background-color: #9b4d96; color: white;">
+        <h4>Cadastrar Relatório</h4>
+      </div>
+      <div class="card-body">
+        <!-- Feedback de Sucesso ou Erro para Relatório -->
+        <div id="feedbackRelatorio" style="display: none;" class="alert"></div>
+      
+        <form id="formRelatorio">
+          <div class="form-group">
+            <label for="descricaoRelatorio">Descrição</label>
+            <textarea class="form-control" id="descricaoRelatorio" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="tipoRelatorio">Tipo de Relatório</label>
+            <input type="text" class="form-control" id="tipoRelatorio" required>
+          </div>
+          <button type="submit" class="btn btn-info">Cadastrar Relatório</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="maineve.js"></script>
+
+  <!-- Incluindo o Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
